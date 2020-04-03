@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "serve",
+			"type": "shell",
+			"command": "pub",
+			"args": [
+				"global",
+				"run",
+				"webdev",
+				"serve",
+				"--auto",
+				"restart"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Release Package",
+			"type": "shell",
+			"command": "pub",
+			"args": [
+				"global",
+				"run",
+				"webdev",
+				"build"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "Build + Serve Release Build",
+			"type": "shell",
+			"command": "dart",
+			"args": [
+				"bin/devtools.dart"
+			],
+			"group": "build",
+			"problemMatcher": {
+				"owner": "custom",
+				"pattern": {
+					"regexp": "_________________"
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "_________________",
+					"endsPattern": "^Serving DevTools"
+				}
+			},
+			"isBackground": true,
+			"dependsOn": "Build Release Package"
+		}
+	],
+}

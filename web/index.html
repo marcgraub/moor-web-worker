@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moor with Web Workers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <script defer src="main.dart.js"></script>
+    <script src="sql-wasm.js"></script>
+  </head>
+  <body>
+    <my-app>
+      <section class="loading-container">
+        <div class="row"> 
+          <div class="flex-item">
+            <img src="packages/moorwebworkers/assets/images/loading/loading-logo-icon.png" class="icon-loading">
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .loading-container { 
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .flex-item {
+          text-align: center;
+        }
+
+        .icon-loading {
+          animation: rotate-center 1.5s ease-in-out infinite both;
+          max-width: 200px;
+          width: calc(100% - 30px);
+        }
+
+        @keyframes rotate-center {
+          0% {
+            transform: rotate(0);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+    </my-app>
+  </body>
+</html>

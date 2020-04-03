@@ -1,0 +1,3 @@
+[submodule "moor"]
+	path = moor
+	url = https://github.com/marcgraub/moor.git
